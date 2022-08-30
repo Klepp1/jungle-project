@@ -31,7 +31,7 @@
       </tfoot>
     </table>
   </div>
-
+<% if enhanced_cart.empty? === false  %>
   <div class="row">
     <div class="col-xs-12">
       <%= form_tag orders_path do %>
@@ -48,5 +48,10 @@
       <% end %>
     </div>
   </div>
-
+<% end %>
+<% if enhanced_cart.empty? === true %>
+<div class="alert alert-danger" role="alert">
+  You cannot checkout with an empty cart!
+</div>
+  <% end %>
 </section>
